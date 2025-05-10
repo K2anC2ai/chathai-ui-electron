@@ -1,0 +1,63 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "dependencies": {
+    "chathai": "^1.0.17",
+    "electron-squirrel-startup": "^1.0.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.27.1",
+    "@electron-forge/cli": "^7.8.1",
+    "@electron-forge/maker-deb": "^7.8.1",
+    "@electron-forge/maker-rpm": "^7.8.1",
+    "@electron-forge/maker-squirrel": "^7.8.1",
+    "@electron-forge/maker-zip": "^7.8.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.8.1",
+    "@electron-forge/plugin-fuses": "^7.8.1",
+    "@electron-forge/publisher-github": "^7.8.1",
+    "@electron/fuses": "^1.8.0",
+    "autoprefixer": "^10.0.0",
+    "babel-loader": "^8.0.0",
+    "css-loader": "^7.1.2",
+    "electron": "^25.9.8",
+    "postcss": "^8.0.0",
+    "postcss-loader": "^8.1.1",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.0.0",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0"
+  },
+  "homepage": ".",
+  "license": "MIT",
+  "build": {
+    "appId": "com.chathai.myapp",
+    "productName": "Chathai Test Generator",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "dist/**/*",
+      "src/main/**/*",
+      "public/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/icon.ico"
+    }
+  }
+}
